@@ -1,0 +1,47 @@
+<div class='container'>
+	<div class='col-md-6 col-sm-6 col-xs-12'>
+		<div class='panel panel-info'>
+			<div class='panel-heading'>
+				<h2>{{article.title}}</h2>
+				<small>{{article.created_at}}&nbsp;&nbsp;by.{{article.user.username}}</small>
+			</div>
+			<div class='panel-body'>
+				{{article.description}}
+			</div>
+		</div>
+	</div>
+	<div class='col-md-6 col-sm-6 col-xs-12'>
+		<div class='comment-up'>
+			<div ng-repeat='comment in comments'>
+				<div class='comment-box'>
+			        <ul class='comment-list'>
+			            <li>
+			                <div class='comment-image'>
+								<img src='../../../asset/favcon.png'>
+			                </div>
+			                <div class='comment-text'>
+			                    <p>{{comment.comment}}</p>
+								<span class='comment-sub-text'>{{comment.updated_at}}</span>
+			                </div>
+			            </li>
+			        </ul>
+			    </div>
+			</div>
+		</div>
+		<div class='comment-down'>
+			<form accept-charset='utf-8'>
+				<div class='form-group login-form-padding'>
+					<div class='col-md-8'>
+						<input type='text' class='form-control' placeholder='コメントを入力してください' ng-model='newComment'>
+					</div>
+					<div class='col-md-2'>
+						<input type="button" value="送信" class='btn btn-primary' ng-click='comment.createComment_(newComment)'>
+					</div>
+					<div class='col-md-2'>
+						<input type="button" value="更新" class='btn btn-success' ng-click='comment.reloadComments_()'>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

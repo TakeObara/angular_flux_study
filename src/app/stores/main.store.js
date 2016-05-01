@@ -8,11 +8,11 @@ class MainStore extends BaseStore {
 
 		super();
 
-		this._log = $log.debug;
-		this._apiConst = ApiConst;
-		this._template_Const = MainConst;
-		this._api = ApiService;
-		this._auth = AuthService;
+		this._log        = $log.debug;
+		this._apiConst   = ApiConst;
+		this._const      = MainConst;
+		this._api        = ApiService;
+		this._auth       = AuthService;
 		this._dispatcher = Dispatcher;
 
 		this.registerCallbacks_();

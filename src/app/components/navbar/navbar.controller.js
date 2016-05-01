@@ -17,10 +17,23 @@ class NavbarCtrl {
 
 	// methods
 	registerChangeCallbacks_() {
-		// this._navbarStore.addChangeListener_();
+		this._navbarStore.addChangeListener_(this._navbarConst.LOGOUT_SUCCESS, this.successLogout_.bind(this));
+		this._navbarStore.addChangeListener_(this._navbarConst.LOGOUT_FAILURE, this.failureLogout_.bind(this));
+	}
+
+	logout_() {
+		this._navbarAction.logout_();
 	}
 
 	// change callbacks
+	successLogout_() {
+		this._toaster.success('ログアウト成功');
+		this._state.go('login');
+	}
+
+	failureLogout_() {
+		this._toaster.error('ログアウト失敗');
+	}
 }
 
 export default NavbarCtrl;

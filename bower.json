@@ -17,11 +17,21 @@
     "angular-toastr": "~1.5.0",
     "moment": "~2.10.6",
     "animate.css": "~3.4.0",
-    "angular": "~1.5.3"
+    "angular": "~1.5.3",
+    "bootstrap": "^3.3.6",
+    "Honoka": "^3.3.6"
+  },
+  "overrides": {
+    "Honoka": {
+      "main": "dist/css/bootstrap.min.css",
+      "dependencies": {}
+    }
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3",
-    "Honoka": "v3.3.6-a"
+    "Honoka": "v3.3.6-a",
+    "bootstrap": "^3.3.6",
+    "ng-websocket": "^0.2.1"
   },
   "resolutions": {
     "jquery": "~2.1.4",

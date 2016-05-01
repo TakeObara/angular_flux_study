@@ -17,8 +17,8 @@ class LoginCtrl {
 
 	// methods
 	registerChangeCallbacks_() {
-		this._loginStore.addChangeListener_(this._loginConst.SUCCESS, this.successLogin_.bind(this));
-		this._loginStore.addChangeListener_(this._loginConst.FAILURE, this.failureLogin_.bind(this));
+		this._loginStore.addChangeListener_(this._loginConst.LOGIN_SUCCESS, this.successLogin_.bind(this));
+		this._loginStore.addChangeListener_(this._loginConst.LOGIN_FAILURE, this.failureLogin_.bind(this));
 	}
 
 	login_(email_, pass_) {

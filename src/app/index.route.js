@@ -29,6 +29,22 @@ var routerConfig = ($stateProvider, $urlRouterProvider, $locationProvider) => {
 				}
 			}
 		})
+		.state('root.article', {
+			url : '/article',
+			views : {
+				'content@' : {
+					'template' : '<article></article>'
+				}
+			}
+		})
+		.state('root.comment', {
+			url : '/article/:articleId/comment',
+			views : {
+				'content@' : {
+					'template' : '<comment></comment>'
+				}
+			}
+		})
 	;
 
 	$urlRouterProvider.otherwise('/login')

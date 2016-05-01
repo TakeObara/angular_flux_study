@@ -9,3 +9,51 @@
 .main {
 	color: #f00;
 }
+
+// comment
+.comment-up {
+	height: 70vh;
+	overflow: scroll;
+}
+
+.comment-down {
+	padding-top: 25px;
+	height: 15vh;
+}
+
+.comment-list {
+    padding:0;
+    list-style:none;
+    max-height:200px;
+    overflow:auto;
+}
+
+.comment-list li {
+    margin:0;
+    margin-top:10px;
+}
+.comment-list li > div {
+    display:table-cell;
+}
+.comment-image {
+    width:30px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+.comment-image img {
+    width:100%;
+    border-radius:50%;
+}
+.comment-text p {
+    margin:0;
+}
+.comment-sub-text {
+    color:#aaa;
+    font-family:verdana;
+    font-size:11px;
+}
+.comment-box {
+    padding:10px;
+    border-top:1px dotted #bbb;
+}

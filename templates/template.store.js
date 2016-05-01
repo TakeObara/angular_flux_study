@@ -10,7 +10,7 @@ class Template_Store extends BaseStore {
 
 		this._log = $log.debug;
 		this._apiConst = ApiConst;
-		this._template_Const = Template_Const;
+		this._const = Template_Const;
 		this._api = ApiService;
 		this._auth = AuthService;
 		this._dispatcher = Dispatcher;

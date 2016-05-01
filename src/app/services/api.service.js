@@ -4,34 +4,128 @@ class ApiService {
 
 		'ngInject'
 
-		this._resource = $resource;
-		this._apiUrl   = ApiConst.MY_URL + ApiConst.MY_PREFIX;
-		this._and = '&&';
-		this._question = '?';
+		this._resource    = $resource;
+		this._apiUrl      = ApiConst.MY_URL + ApiConst.MY_PREFIX;
+		this._and         = '&&';
+		this._question    = '?';
 		this._prefixPage  = 'page=';
 		this._prefixToken = 'token=';
 	}
 
 	auth_(token_) {
 		return this._resource('', {}, {
-			login : {
-				method : 'Post',
-				url : this._apiUrl + '/auth/login'
-			},
-			logout : {
-				method : 'GET',
-				url : this._apiUrl + '/auth/logout' + this._question + this._prefixToken + token_
-			},
-			register : {
+			login_ : {
 				method : 'POST',
-				url : this._apiUrl + '/auth/register'
+				url    : this._apiUrl + '/auth/login'
 			},
-			me : {
+			logout_ : {
 				method : 'GET',
-				url : this._apiUrl + '/auth/me' + this._question + this._prefixToken + token_
+				url    : this._apiUrl + '/auth/logout'
+			},
+			register_ : {
+				method : 'POST',
+				url    : this._apiUrl + '/auth/register'
+			},
+			me_ : {
+				method : 'GET',
+				url    : this._apiUrl + '/auth/me' + this._question + this._prefixToken + token_
 			}
 		});
 	}
+
+	proflie(token_) {
+		return this._resource('', {}, {
+			index_ : {
+				method : 'GET',
+				url    : this._apiUrl + '/profiles'
+			},
+			show_ : {
+				method : 'GET',
+				url    : this._apiUrl + '/profiles/:userId' + this._question + this._prefixToken + token_
+			},
+			update_ : {
+				method : 'PUT',
+				url    : this._apiUrl + '/profiles/:userId' + this._question + this._prefixToken + token_
+			}
+		});
+	}
+
+	article_(token_, page_) {
+		return this._resource('', {}, {
+			index_ : {
+				method : 'GET',
+				url    : this._apiUrl + '/articles' + this._question + this._prefixToken + token_ + this._and + this._prefixPage + page_
+			},
+			create_ : {
+				method : 'POST',
+				url    : this._apiUrl + '/articles' + this._question + this._prefixToken + token_
+			},
+			show_ : {
+				method : 'GET',
+				url    : this._apiUrl + '/articles/:articleId' + this._question + this._prefixToken + token_
+			},
+			update_ : {
+				method : 'PUT',
+				url    : this._apiUrl + '/articles/:articleId' + this._question + this._prefixToken + token_
+			},
+			delete_ : {
+				method : 'DELETE',
+				url    : this._apiUrl + '/articles/:articleId' + this._question + this._prefixToken + token_
+			}
+		});
+	}
+
+	comment_(token_) {
+		return this._resource('', {}, {
+			index_ : {
+				method  : 'GET',
+				isArray : true,
+				url     : this._apiUrl + '/articles/:aritcleId/comments' + this._question + this._prefixToken + token_
+			},
+			create_ : {
+				method : 'POST',
+				url    : this._apiUrl + '/articles/:aritcleId/comments' + this._question + this._prefixToken + token_
+			},
+			show_ : {
+				method : 'GET',
+				url    : this._apiUrl + '/articles/:aritcleId/comments/:commentId' + this._question + this._prefixToken + token_
+			},
+			update_ : {
+				method : 'PUT',
+				url    : this._apiUrl + '/articles/:aritcleId/comments/:commentId' + this._question + this._prefixToken + token_
+			},
+			delete_ : {
+				method : 'DELETE',
+				url    : this._apiUrl + '/articles/:aritcleId/comments/:commentId' + this._question + this._prefixToken + token_
+			}
+		});
+	}
+
+	// for develop
+	// template_(token_) {
+	// 	return this._resource('', {}, {
+	// 		index_ : {
+	// 			method : 'GET',
+	// 			url    : ''
+	// 		},
+	// 		create_ : {
+	// 			method : 'POST',
+	// 			url    : ''
+	// 		},
+	// 		show_ : {
+	// 			method : 'GET',
+	// 			url    : ''
+	// 		},
+	// 		update_ : {
+	// 			method : 'PUT',
+	// 			url    : ''
+	// 		},
+	// 		delete_ : {
+	// 			method : 'DELETE',
+	// 			url    : ''
+	// 		}
+	// 	});
+	// }
 
 }
 

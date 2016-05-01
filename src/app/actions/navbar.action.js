@@ -4,9 +4,15 @@ class NavbarAction {
 
 		'ngInject';
 
-		this._log = $log.debug;
 		this._dispatcher = Dispatcher;
-		this._const = NavbarConst;
+		this._const      = NavbarConst;
+	}
+
+	logout_() {
+		this._dispatcher.dispatch_({
+			type : this._const.LOGOUT,
+			params : {}
+		});
 	}
 }
 

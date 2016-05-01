@@ -14,9 +14,9 @@ class Dispatcher {
 		let token_ = 'token_' + this._tokenKey;
 
 		this._listeners.push({
-            token:      token_,
-            action:     action_,
-            callback:   callback_
+            token    : token_,
+            action   : action_,
+            callback : callback_
         });
 		this._tokenKey++;
 

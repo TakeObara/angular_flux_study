@@ -1,0 +1,22 @@
+<div id='top'></div>
+<div ng-repeat='article in articles.data'>
+	<div class='col-lg-3 col-md-4 col-sm-6 col-xs-12'>
+		<div class='panel panel-info'>
+			<div class='panel-heading'>
+				<h2><a ui-sref='root.comment({articleId : article.id})'>{{article.title}}</a></h2>
+				<small>{{article.created_at}}&nbsp;&nbsp;by.{{article.user.username}}</small>
+			</div>
+			<div class='panel-body'>
+				{{article.description}}
+			</div>
+		</div>
+	</div>
+</div>
+<div class='clearfix'></div>
+<div class='text-center'>
+	<nav class='center-block'>
+		<ul class='pagination' ng-repeat='i in article.range_(articles.last_page)'>
+			<li ng-class='{"active" : articles.current_page === i + 1}'><a ng-click='article.transPage_(i + 1, "top")'>{{i + 1}}</a></li>
+		</ul>
+	</nav>
+</div>

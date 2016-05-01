@@ -8,18 +8,31 @@ class NavbarStore extends BaseStore {
 
 		super();
 
-		this._log         = $log.debug;
-		this._apiConst    = ApiConst;
-		this._navbarConst = NavbarConst;
-		this._api         = ApiService;
-		this._auth        = AuthService;
-		this._dispatcher  = Dispatcher;
+		this._log        = $log.debug;
+		this._apiConst   = ApiConst;
+		this._const      = NavbarConst;
+		this._api        = ApiService;
+		this._auth       = AuthService;
+		this._dispatcher = Dispatcher;
 
 		this.registerCallbacks_();
 	}
 
 	registerCallbacks_() {
-		// this._dispatcher.register_();
+		this._dispatcher.register_(this._const.LOGOUT, this.logout_.bind(this));
+	}
+
+	logout_() {
+		let self = this;
+		self._api.auth_().logout_( {},
+			() => {
+				self._auth.logout_();
+				self.emitChange_(self._const.LOGOUT_SUCCESS);
+			},
+			() => {
+				self.emitChange_(self._const.LOGOUT_FAILURE);
+			}
+		);
 	}
 }
 

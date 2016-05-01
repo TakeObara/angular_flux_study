@@ -1,1 +1,23 @@
-<h1>This is navbar.html</h1>
+<nav class='navbar navbar-default'>
+    <div class='container'>
+        <div class='navbar-header'>
+            <div class='navbar-brand'>TestApplication</div>
+        </div>
+        <ul class='nav navbar-nav'>
+	        <li><a ui-sref='root.main'>HOME</a></li>
+            <li><a ui-sref='root.article'>記事</a></li>
+        </ul>
+        <ul class='nav navbar-nav navbar-right'>
+            <li class='dropdown'>
+                <a data-toggle='dropdown' aria-expanded='false'>
+                    設定<span class='caret'></span>
+                </a>
+                <ul class='dropdown-menu'>
+                    <li><a ui-sref='root.profile({userId : me})'>プロフィール編集</a></li>
+                    <li><a ng-click='navbar.logout_()'>ログアウト</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+

@@ -5,4 +5,3 @@ coverage/
 .idea/
 .tmp/
 dist/
-src/configs/constant.js

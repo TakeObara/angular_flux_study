@@ -7,7 +7,7 @@ class NavbarDirective {
 		'ngInject';
 
 		let directive = {
-            restrict     : 'E',
+            restrict     : 'EA',
             controller   : NavbarCtrl,
             controllerAs : 'navbar',
             templateUrl  : 'app/components/navbar/navbar.html'

@@ -4,9 +4,9 @@ class Template_Action {
 
 		'ngInject';
 
-		this._log = $log.debug;
+		this._log        = $log.debug;
 		this._dispatcher = Dispatcher;
-		this._const = Template_Const;
+		this._const      = Template_Const;
 	}
 }
 

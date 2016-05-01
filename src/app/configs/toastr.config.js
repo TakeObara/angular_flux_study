@@ -3,7 +3,7 @@ export default function(toastrConfig) {
 
     angular.extend(toastrConfig, {
         allowHtml     : true,
-        positionClass : 'toast-bottom-right',
+        positionClass : 'toast-top-right',
         messageClass  : 'toast-message'
     });
 }

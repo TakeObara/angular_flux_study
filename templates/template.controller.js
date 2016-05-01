@@ -1,6 +1,6 @@
 class Template_Ctrl {
 
-	constructor($scope, $state, $log, toastr, Template_Const, Template_Action, Template_Store){
+	constructor($scope, $state, $log, toastr, Template_Const, Template_Action, Template_Store) {
 
 		'ngInject';
 
@@ -13,12 +13,20 @@ class Template_Ctrl {
 		this._template_Store = Template_Store;
 
 		this.registerChangeCallbacks_();
+
+		this.init_();
 	}
 
-	// methods
+	// init
+	init_() {
+
+	}
+
 	registerChangeCallbacks_() {
 		// this._template_Store.addChangeListener_();
 	}
+
+	// methods
 
 	// change callbacks
 }
