@@ -15,15 +15,17 @@ class NavbarStore extends BaseStore {
 		this._auth       = AuthService;
 		this._dispatcher = Dispatcher;
 
-		this.registerCallbacks_();
+		this._registerCallbacks();
 	}
 
-	registerCallbacks_() {
+	_registerCallbacks() {
 		this._dispatcher.register_(this._const.LOGOUT, this.logout_.bind(this));
 	}
 
 	logout_() {
+
 		let self = this;
+
 		self._api.auth_().logout_( {},
 			() => {
 				self._auth.logout_();

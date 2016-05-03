@@ -9,6 +9,7 @@ class NavbarAction {
 	}
 
 	logout_() {
+
 		this._dispatcher.dispatch_({
 			type : this._const.LOGOUT,
 			params : {}

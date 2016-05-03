@@ -18,25 +18,23 @@ class ArticleCtrl {
 
 		this._scope.$watch(
 			angular.bind(this, () => { return this._scope.page }),
-			this.getArticles_.bind(this)
+			this._getArticles.bind(this)
 		);
 
-		this.registerChangeCallbacks_();
-
-		this.initial_();
+		this._registerChangeCallbacks();
+		this._initial();
 	}
 
-	// init
-	initial_() {
-		this.getArticles_();
+	// private methods
+	_initial() {
+		this._getArticles();
 	}
 
-	registerChangeCallbacks_() {
+	_registerChangeCallbacks() {
 		// something
 	}
 
-	// methods
-	getArticles_() {
+	_getArticles() {
 
 		this._scope.articles = this._articleStore.getAll_({page : this._scope.page});
 
@@ -45,11 +43,15 @@ class ArticleCtrl {
 		}
 	}
 
+	// public methods
 	range_(num_) {
+
 		var arr = [];
+
 		for (var i = 0; i < num_; ++i) {
 			arr.push(i);
 		}
+
 		return arr;
 	}
 

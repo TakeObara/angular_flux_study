@@ -12,15 +12,17 @@ class NavbarCtrl {
 		this._navbarAction = NavbarAction;
 		this._navbarStore = NavbarStore;
 
-		this.registerChangeCallbacks_();
+		this._registerChangeCallbacks();
 	}
 
-	// methods
-	registerChangeCallbacks_() {
+	// private methods
+	_registerChangeCallbacks() {
 		this._navbarStore.addChangeListener_(this._navbarConst.LOGOUT_SUCCESS, this.successLogout_.bind(this));
 		this._navbarStore.addChangeListener_(this._navbarConst.LOGOUT_FAILURE, this.failureLogout_.bind(this));
 	}
 
+
+	// public methods
 	logout_() {
 		this._navbarAction.logout_();
 	}

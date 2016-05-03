@@ -15,12 +15,16 @@ class Template_Store extends BaseStore {
 		this._auth = AuthService;
 		this._dispatcher = Dispatcher;
 
-		this.registerCallbacks_();
+		this._registerCallbacks();
 	}
 
-	registerCallbacks_() {
+	// private methods
+	_registerCallbacks() {
 		// this._dispatcher.register_();
 	}
+
+	// public methods
+
 }
 
 export default Template_Store;

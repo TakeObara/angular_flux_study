@@ -12,21 +12,21 @@ class Template_Ctrl {
 		this._template_Action = Template_Action;
 		this._template_Store = Template_Store;
 
-		this.registerChangeCallbacks_();
+		this._registerChangeCallbacks();
 
-		this.init_();
+		this._init();
 	}
 
-	// init
-	init_() {
+	// private methods
+	_init() {
 
 	}
 
-	registerChangeCallbacks_() {
+	_registerChangeCallbacks() {
 		// this._template_Store.addChangeListener_();
 	}
 
-	// methods
+	// public methods
 
 	// change callbacks
 }

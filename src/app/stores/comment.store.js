@@ -15,34 +15,41 @@ class CommentStore extends BaseStore {
 		this._auth       = AuthService;
 		this._dispatcher = Dispatcher;
 
-		this.registerCallbacks_();
+		this._registerCallbacks();
 	}
 
-	registerCallbacks_() {
+	// private methods
+	_registerCallbacks() {
 		this._dispatcher.register_(this._const.CREATE, this.create_.bind(this));
 	}
 
+
+	// pubilc methods
 	create_(param_) {
 
-		this._api.comment_(this._auth.getToken_()).create_( {'aritcleId' : param_.articleId}, {'comment' : param_.comment},
+		let self = this;
+
+		self._api.comment_(self._auth.getToken_()).create_( {'aritcleId' : param_.articleId}, {'comment' : param_.comment},
 			() => {
-				this.emitChange_(this._const.CHANGE_CREATE_SUCCESS);
+				self.emitChange_(self._const.CHANGE_CREATE_SUCCESS);
 			},
 			(error_) => {
-				this._log(error_);
-				this.emitChange_(this._const.CHANGE_CREATE_FAILURE);
+				self._log(error_);
+				self.emitChange_(self._const.CHANGE_CREATE_FAILURE);
 			}
 		);
 	}
 
 	getAll_(param_) {
 
-		return this._api.comment_(this._auth.getToken_()).index_( {aritcleId : param_.articleId},
+		let self = this;
+
+		return self._api.comment_(self._auth.getToken_()).index_( {aritcleId : param_.articleId},
 			(data_) => {
 				return data_;
 			},
 			(error_) => {
-				this._log(error_);
+				self._log(error_);
 				return null;
 			}
 		);

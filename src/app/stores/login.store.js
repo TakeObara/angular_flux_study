@@ -15,23 +15,27 @@ class LoginStore extends BaseStore {
 		this._auth       = AuthService;
 		this._dispatcher = Dispatcher;
 
-		this.registerCallbacks_();
+		this._registerCallbacks();
 	}
 
-	registerCallbacks_() {
+	// private methods
+	_registerCallbacks() {
 		this._dispatcher.register_(this._const.MANUAL, this.manualLogin_.bind(this));
 	}
 
+	// public methods
 	manualLogin_(param_) {
 
-		this._api.auth_().login_( {email: param_.email, password: param_.pass},
+		let self = this;
+
+		self._api.auth_().login_( {email: param_.email, password: param_.pass},
 			(data_) => {
-				this._auth.login_(data_);
-				this.emitChange_(this._const.LOGIN_SUCCESS);
+				self._auth.login_(data_);
+				self.emitChange_(self._const.LOGIN_SUCCESS);
 			},
 			(error_) => {
-				this._log(error_);
-				this.emitChange_(this._const.LOGIN_FAILURE);
+				self._log(error_);
+				self.emitChange_(self._const.LOGIN_FAILURE);
 			}
 		);
 

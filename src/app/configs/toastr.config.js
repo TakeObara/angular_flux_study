@@ -1,9 +1,11 @@
 export default function(toastrConfig) {
+
     'ngInject';
 
     angular.extend(toastrConfig, {
-        allowHtml     : true,
+        allowHtml     : false,
         positionClass : 'toast-top-right',
-        messageClass  : 'toast-message'
+        messageClass  : 'toast-message',
+        timeOut       : 3000
     });
 }

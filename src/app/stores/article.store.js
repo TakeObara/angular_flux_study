@@ -15,21 +15,25 @@ class ArticleStore extends BaseStore {
 		this._auth       = AuthService;
 		this._dispatcher = Dispatcher;
 
-		this.registerCallbacks_();
+		this._registerCallbacks();
 	}
 
-	registerCallbacks_() {
+	// private methods
+	_registerCallbacks() {
 		// something
 	}
 
+	// public methods
 	get_(param_) {
 
-		return this._api.article_(this._auth.getToken_()).show_( {'articleId' : param_.articleId},
+		let self = this;
+
+		return self._api.article_(self._auth.getToken_()).show_( {'articleId' : param_.articleId},
 			(data_) => {
 				return data_;
 			},
 			(error_) => {
-				this._log(error_);
+				self._log(error_);
 				return null;
 			}
 		);
@@ -37,12 +41,14 @@ class ArticleStore extends BaseStore {
 
 	getAll_(param_) {
 
-		return this._api.article_(this._auth.getToken_(), param_.page).index_( {},
+		let self = this;
+
+		return self._api.article_(self._auth.getToken_(), param_.page).index_( {},
 			(data_) => {
 				return data_;
 			},
 			(error_) => {
-				this._log(error_);
+				self._log(error_);
 				return null;
 			}
 		);

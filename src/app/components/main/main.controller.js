@@ -12,13 +12,15 @@ class MainCtrl {
 		this._mainAction = MainAction;
 		this._mainStore = MainStore;
 
-		this.registerChangeCallbacks_();
+		this._registerChangeCallbacks();
 	}
 
-	// methods
-	registerChangeCallbacks_() {
+	// private methods
+	_registerChangeCallbacks() {
 		// this._mainStore.addChangeListener_();
 	}
+
+	// public methods
 
 	// change callbacks
 }

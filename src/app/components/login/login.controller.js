@@ -12,15 +12,16 @@ class LoginCtrl {
 		this._loginAction = LoginAction;
 		this._loginStore  = LoginStore;
 
-		this.registerChangeCallbacks_();
+		this._registerChangeCallbacks();
 	}
 
-	// methods
-	registerChangeCallbacks_() {
+	// private methods
+	_registerChangeCallbacks() {
 		this._loginStore.addChangeListener_(this._loginConst.LOGIN_SUCCESS, this.successLogin_.bind(this));
 		this._loginStore.addChangeListener_(this._loginConst.LOGIN_FAILURE, this.failureLogin_.bind(this));
 	}
 
+	// public methods
 	login_(email_, pass_) {
 		this._loginAction.manualLogin_(email_, pass_);
 	}

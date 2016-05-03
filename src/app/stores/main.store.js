@@ -15,10 +15,10 @@ class MainStore extends BaseStore {
 		this._auth       = AuthService;
 		this._dispatcher = Dispatcher;
 
-		this.registerCallbacks_();
+		this._registerCallbacks();
 	}
 
-	registerCallbacks_() {
+	_registerCallbacks() {
 		// this._dispatcher.register_();
 	}
 }

@@ -16,26 +16,24 @@ class CommentCtrl {
 
 		this._articleId = this._stateParams.articleId;
 
-		this.registerChangeCallbacks_();
+		this._registerChangeCallbacks();
 
-		this.init_();
+		this._init();
 	}
 
 
-	// init
-	init_() {
-		this.getArticle_();
-		this.getAllComments_();
+	// private methods
+	_init() {
+		this._getArticle();
+		this._getAllComments();
 	}
 
-	registerChangeCallbacks_() {
+	_registerChangeCallbacks() {
 		this._commentStore.addChangeListener_(this._commentConst.CHANGE_CREATE_SUCCESS, this.successCreateCommentCallback_.bind(this));
 		this._commentStore.addChangeListener_(this._commentConst.CHANGE_CREATE_FAILURE, this.failureCreateCommentCallback_.bind(this));
 	}
 
-
-	// methods
-	getArticle_() {
+	_getArticle() {
 
 		this._scope.article = this._articleStore.get_({'articleId' : this._articleId});
 
@@ -44,7 +42,7 @@ class CommentCtrl {
 		}
 	}
 
-	getAllComments_() {
+	_getAllComments() {
 
 		this._scope.comments = this._commentStore.getAll_({'articleId' : this._articleId});
 
@@ -53,19 +51,21 @@ class CommentCtrl {
 		}
 	}
 
+	// public methods
+
 	createComment_(comment_) {
 		if(!comment_) return;
 		this._commentAction.create_(comment_, this._articleId);
 	}
 
 	reloadComments_() {
-		this.getAllComments_();
+		this._getAllComments();
 	}
 
 
 	// change callbacks
 	successCreateCommentCallback_() {
-		this.getAllComments_();
+		this._getAllComments();
 		this._scope.newComment = '';
 		this._toaster.success('投稿成功');
 	}

@@ -73,23 +73,23 @@ angular.module('yoAngular', [
     .service('WebStorageService', WebStorageService)
 
     // actions
-    .service('LoginAction'   , LoginAction  )
-    .service('NavbarAction'  , NavbarAction )
-    .service('MainAction'    , MainAction   )
-    .service('ArticleAction' , ArticleAction)
-    .service('CommentAction' , CommentAction)
+    .service('LoginAction'  , LoginAction  )
+    .service('NavbarAction' , NavbarAction )
+    .service('MainAction'   , MainAction   )
+    .service('ArticleAction', ArticleAction)
+    .service('CommentAction', CommentAction)
 
     // stores
-    .service('LoginStore'   , LoginStore  )
-    .service('NavbarStore'  , NavbarStore )
-    .service('MainStore'    , MainStore   )
-    .service('ArticleStore' , ArticleStore)
-    .service('CommentStore' , CommentStore)
+    .service('LoginStore'  , LoginStore  )
+    .service('NavbarStore' , NavbarStore )
+    .service('MainStore'   , MainStore   )
+    .service('ArticleStore', ArticleStore)
+    .service('CommentStore', CommentStore)
 
     // directives
-    .directive('login'   , () => new LoginDirective()  )
-    .directive('navbar'  , () => new NavbarDirective() )
-    .directive('main'    , () => new MainDirective()   )
-    .directive('article' , () => new ArticleDirective())
-    .directive('comment' , () => new CommentDirective())
+    .directive('login'  , () => new LoginDirective()  )
+    .directive('navbar' , () => new NavbarDirective() )
+    .directive('main'   , () => new MainDirective()   )
+    .directive('article', () => new ArticleDirective())
+    .directive('comment', () => new CommentDirective())
 ;
