@@ -1,7 +1,9 @@
 {
   "name": "yoAngular",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "ws": "^1.1.0"
+  },
   "scripts": {
     "test": "gulp test"
   },

@@ -48,7 +48,8 @@ angular.module('yoAngular', [
         'ngResource',
         'ui.router',
         'ngMaterial',
-        'toastr'
+        'toastr',
+        'ngWebsocket'
     ])
     // const
     .constant('ApiConst'    , Const.API_CONST    )
