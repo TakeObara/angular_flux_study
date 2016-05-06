@@ -2,14 +2,13 @@ import BaseStore from '../base/base.store';
 
 class NavbarStore extends BaseStore {
 
-	constructor($log, ApiConst, NavbarConst, ApiService, AuthService, Dispatcher) {
+	constructor($log, NavbarConst, ApiService, AuthService, Dispatcher) {
 
 		'ngInject';
 
 		super();
 
 		this._log        = $log.debug;
-		this._apiConst   = ApiConst;
 		this._const      = NavbarConst;
 		this._api        = ApiService;
 		this._auth       = AuthService;

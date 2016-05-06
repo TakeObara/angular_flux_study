@@ -1,9 +1,11 @@
 'use strict';
 
-var API_CONST = API_CONST || {
-	// MyApi
-	MY_URL    : 'http://localhost:8000',
-	MY_PREFIX : '/api/v1'
+var MY_CONST = MY_CONST || {
+	// my api
+	API_URL    : 'http://localhost:8000',
+	API_PREFIX : '/api/v1',
+	// web socket
+	SOCKET_URL : 'ws://localhost:12345'
 };
 
 var LOGIN_CONST = LOGIN_CONST || {
@@ -38,11 +40,16 @@ var COMMENT_CONST = COMMENT_CONST || {
 	CHANGE_CREATE_FAILURE : 'COMMENT_CHANGE_CREATE_FAILURE'
 };
 
+var CHATROOM_CONST = CHATROOM_CONST || {
+	// change callbacks
+};
+
 export {
-	API_CONST,
+	MY_CONST,
 	LOGIN_CONST,
 	NAVBAR_CONST,
 	MAIN_CONST,
 	ARTICLE_CONST,
-	COMMENT_CONST
+	COMMENT_CONST,
+	CHATROOM_CONST
 };

@@ -18,25 +18,31 @@ import AuthService       from './services/auth.service'      ;
 import WebStorageService from './services/webstorage.service';
 
 // actions
-import LoginAction   from './actions/login.action'  ;
-import NavbarAction  from './actions/navbar.action' ;
-import MainAction    from './actions/main.action'   ;
-import ArticleAction from './actions/article.action';
-import CommentAction from './actions/comment.action';
+import LoginAction    from './actions/login.action'   ;
+import NavbarAction   from './actions/navbar.action'  ;
+import MainAction     from './actions/main.action'    ;
+import ArticleAction  from './actions/article.action' ;
+import CommentAction  from './actions/comment.action' ;
+import ChatroomAction from './actions/chatroom.action';
 
 // stores
-import LoginStore   from './stores/login.store'  ;
-import NavbarStore  from './stores/navbar.store' ;
-import MainStore    from './stores/main.store'   ;
-import ArticleStore from './stores/article.store';
-import CommentStore from './stores/comment.store';
+import LoginStore    from './stores/login.store'   ;
+import NavbarStore   from './stores/navbar.store'  ;
+import MainStore     from './stores/main.store'    ;
+import ArticleStore  from './stores/article.store' ;
+import CommentStore  from './stores/comment.store' ;
+import ChatroomStore from './stores/chatroom.store';
 
 // directives
-import LoginDirective   from './components/login/login.directive'    ;
-import NavbarDirective  from './components/navbar/navbar.directive'  ;
-import MainDirective    from './components/main/main.directive'      ;
-import ArticleDirective from './components/article/article.directive';
-import CommentDirective from './components/comment/comment.directive';
+import LoginDirective    from './components/login/login.directive'      ;
+import NavbarDirective   from './components/navbar/navbar.directive'    ;
+import MainDirective     from './components/main/main.directive'        ;
+import ArticleDirective  from './components/article/article.directive'  ;
+import CommentDirective  from './components/comment/comment.directive'  ;
+import ChatroomDirective from './components/chatroom/chatroom.directive';
+
+// run
+import WebSocketRun from './run/websocket.run';
 
 angular.module('yoAngular', [
         'ngAnimate',
@@ -51,13 +57,15 @@ angular.module('yoAngular', [
         'toastr',
         'ngWebsocket'
     ])
+
     // const
-    .constant('ApiConst'    , Const.API_CONST    )
-    .constant('LoginConst'  , Const.LOGIN_CONST  )
-    .constant('NavbarConst' , Const.NAVBAR_CONST )
-    .constant('MainConst'   , Const.MAIN_CONST   )
-    .constant('ArticleConst', Const.ARTICLE_CONST)
-    .constant('CommentConst', Const.COMMENT_CONST)
+    .constant('MyConst'      , Const.MY_CONST      )
+    .constant('LoginConst'   , Const.LOGIN_CONST   )
+    .constant('NavbarConst'  , Const.NAVBAR_CONST  )
+    .constant('MainConst'    , Const.MAIN_CONST    )
+    .constant('ArticleConst' , Const.ARTICLE_CONST )
+    .constant('CommentConst' , Const.COMMENT_CONST )
+    .constant('ChatroomConst', Const.CHATROOM_CONST)
 
     // configs
     .config(RouterConfig)
@@ -74,23 +82,29 @@ angular.module('yoAngular', [
     .service('WebStorageService', WebStorageService)
 
     // actions
-    .service('LoginAction'  , LoginAction  )
-    .service('NavbarAction' , NavbarAction )
-    .service('MainAction'   , MainAction   )
-    .service('ArticleAction', ArticleAction)
-    .service('CommentAction', CommentAction)
+    .service('LoginAction'   , LoginAction   )
+    .service('NavbarAction'  , NavbarAction  )
+    .service('MainAction'    , MainAction    )
+    .service('ArticleAction' , ArticleAction )
+    .service('CommentAction' , CommentAction )
+    .service('ChatroomAction', ChatroomAction)
 
     // stores
-    .service('LoginStore'  , LoginStore  )
-    .service('NavbarStore' , NavbarStore )
-    .service('MainStore'   , MainStore   )
-    .service('ArticleStore', ArticleStore)
-    .service('CommentStore', CommentStore)
+    .service('LoginStore'   , LoginStore   )
+    .service('NavbarStore'  , NavbarStore  )
+    .service('MainStore'    , MainStore    )
+    .service('ArticleStore' , ArticleStore )
+    .service('CommentStore' , CommentStore )
+    .service('ChatroomStore', ChatroomStore)
 
     // directives
-    .directive('login'  , () => new LoginDirective()  )
-    .directive('navbar' , () => new NavbarDirective() )
-    .directive('main'   , () => new MainDirective()   )
-    .directive('article', () => new ArticleDirective())
-    .directive('comment', () => new CommentDirective())
+    .directive('login'   , () => new LoginDirective()   )
+    .directive('navbar'  , () => new NavbarDirective()  )
+    .directive('main'    , () => new MainDirective()    )
+    .directive('article' , () => new ArticleDirective() )
+    .directive('comment' , () => new CommentDirective() )
+    .directive('chatroom', () => new ChatroomDirective())
+
+    // run
+    .run(WebSocketRun)
 ;

@@ -1,4 +1,4 @@
-export default function($logProvider) {
+export default ($logProvider) => {
 
 	'ngInject';
 

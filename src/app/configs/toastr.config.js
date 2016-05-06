@@ -1,4 +1,4 @@
-export default function(toastrConfig) {
+export default (toastrConfig) => {
 
     'ngInject';
 

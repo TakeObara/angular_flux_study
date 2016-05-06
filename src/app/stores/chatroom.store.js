@@ -1,15 +1,15 @@
 import BaseStore from '../base/base.store';
 
-class Template_Store extends BaseStore {
+class ChatroomStore extends BaseStore {
 
-	constructor($log, Template_Const, ApiService, AuthService, Dispatcher) {
+	constructor($log, ChatroomConst, ApiService, AuthService, Dispatcher) {
 
 		'ngInject';
 
 		super();
 
 		this._log        = $log.debug;
-		this._const      = Template_Const;
+		this._const      = ChatroomConst;
 		this._api        = ApiService;
 		this._auth       = AuthService;
 		this._dispatcher = Dispatcher;
@@ -26,4 +26,4 @@ class Template_Store extends BaseStore {
 
 }
 
-export default Template_Store;
+export default ChatroomStore;

@@ -2,14 +2,13 @@ import BaseStore from '../base/base.store';
 
 class ArticleStore extends BaseStore {
 
-	constructor($log, ApiConst, ArticleConst, ApiService, AuthService, Dispatcher) {
+	constructor($log, ArticleConst, ApiService, AuthService, Dispatcher) {
 
 		'ngInject';
 
 		super();
 
 		this._log        = $log.debug;
-		this._apiConst   = ApiConst;
 		this._const      = ArticleConst;
 		this._api        = ApiService;
 		this._auth       = AuthService;

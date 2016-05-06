@@ -1,11 +1,11 @@
 class ApiService {
 
-	constructor($resource, ApiConst) {
+	constructor($resource, MyConst) {
 
 		'ngInject'
 
 		this._resource    = $resource;
-		this._apiUrl      = ApiConst.MY_URL + ApiConst.MY_PREFIX;
+		this._apiUrl      = MyConst.API_URL + MyConst.API_PREFIX;
 		this._and         = '&&';
 		this._question    = '?';
 		this._prefixPage  = 'page=';

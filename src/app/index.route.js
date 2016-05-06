@@ -45,6 +45,14 @@ var routerConfig = ($stateProvider, $urlRouterProvider, $locationProvider) => {
 				}
 			}
 		})
+		.state('root.chatroom', {
+			url : '/chatroom',
+			views : {
+				'content@' : {
+					'template' : '<chatroom></chatroom>'
+				}
+			}
+		})
 	;
 
 	$urlRouterProvider.otherwise('/login')
