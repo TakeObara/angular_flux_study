@@ -11,7 +11,7 @@ class Dispatcher {
 
 	register_(action_, callback_) {
 
-		let token_ = 'token_' + this._tokenKey;
+		const token_ = 'token_' + this._tokenKey;
 
 		this._listeners.push({
             token    : token_,

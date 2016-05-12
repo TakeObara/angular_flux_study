@@ -52,7 +52,6 @@ class CommentCtrl {
 	}
 
 	// public methods
-
 	createComment_(comment_) {
 		if(!comment_) return;
 		this._commentAction.create_(comment_, this._articleId);

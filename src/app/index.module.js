@@ -106,5 +106,5 @@ angular.module('yoAngular', [
     .directive('chatroom', () => new ChatroomDirective())
 
     // run
-    .run(WebSocketRun)
+    // .run(WebSocketRun)
 ;

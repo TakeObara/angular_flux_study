@@ -17,9 +17,12 @@ class MainStore extends BaseStore {
 		this._registerCallbacks();
 	}
 
+	// private methods
 	_registerCallbacks() {
 		// this._dispatcher.register_();
 	}
+
+	// public methods
 }
 
 export default MainStore;

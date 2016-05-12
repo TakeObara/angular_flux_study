@@ -4,13 +4,13 @@ class ChatroomCtrl {
 
 		'ngInject';
 
-		this._log = $log.debug;
-		this._scope = $scope;
-		this._state = $state;
-		this._toaster  = toastr;
+		this._log            = $log.debug;
+		this._scope          = $scope;
+		this._state          = $state;
+		this._toaster        = toastr;
 		this._chatroomConst  = ChatroomConst;
 		this._chatroomAction = ChatroomAction;
-		this._chatroomStore = ChatroomStore;
+		this._chatroomStore  = ChatroomStore;
 
 		this._registerChangeCallbacks();
 

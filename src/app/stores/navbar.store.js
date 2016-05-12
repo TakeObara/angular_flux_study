@@ -17,10 +17,12 @@ class NavbarStore extends BaseStore {
 		this._registerCallbacks();
 	}
 
+	// private methods
 	_registerCallbacks() {
 		this._dispatcher.register_(this._const.LOGOUT, this.logout_.bind(this));
 	}
 
+	// public methods
 	logout_() {
 
 		let self = this;

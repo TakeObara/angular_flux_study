@@ -46,9 +46,9 @@ class ArticleCtrl {
 	// public methods
 	range_(num_) {
 
-		var arr = [];
+		let arr = [];
 
-		for (var i = 0; i < num_; ++i) {
+		for (let i = 0; i < num_; ++i) {
 			arr.push(i);
 		}
 
