@@ -14,17 +14,17 @@ class ApiService {
 
 	auth_(token_) {
 		return this._resource('', {}, {
+			register_ : {
+				method : 'POST',
+				url    : this._apiUrl + '/auth/register'
+			},
 			login_ : {
 				method : 'POST',
 				url    : this._apiUrl + '/auth/login'
 			},
 			logout_ : {
 				method : 'GET',
-				url    : this._apiUrl + '/auth/logout'
-			},
-			register_ : {
-				method : 'POST',
-				url    : this._apiUrl + '/auth/register'
+				url    : this._apiUrl + '/auth/logout' + this._question + this._prefixToken + token_
 			},
 			me_ : {
 				method : 'GET',
@@ -33,7 +33,7 @@ class ApiService {
 		});
 	}
 
-	proflie(token_) {
+	proflie_(token_) {
 		return this._resource('', {}, {
 			index_ : {
 				method : 'GET',
@@ -79,7 +79,6 @@ class ApiService {
 		return this._resource('', {}, {
 			index_ : {
 				method  : 'GET',
-				isArray : true,
 				url     : this._apiUrl + '/articles/:aritcleId/comments' + this._question + this._prefixToken + token_
 			},
 			create_ : {

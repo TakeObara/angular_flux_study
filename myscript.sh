@@ -18,6 +18,7 @@ create() {
 	# components
 	mkdir "./src/app/components/${filename_}"
 	sed -e "s/template_/${filename_}/g" "./templates/template.html" > "./src/app/components/${filename_}/${filename_}.html"
+	sed -e "s/template_/${filename_}/g" "./templates/template.scss" > "./src/app/components/${filename_}/${filename_}.scss"
 	sed -e "s/Template_/${filename_^}/g" -e "s/template_/${filename_}/g" "./templates/template.directive.js" > "./src/app/components/${filename_}/${filename_}.directive.js"
 	sed -e "s/Template_/${filename_^}/g" -e "s/template_/${filename_}/g" "./templates/template.controller.js" > "./src/app/components/${filename_}/${filename_}.controller.js"
 

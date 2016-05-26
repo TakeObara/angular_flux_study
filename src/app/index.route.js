@@ -53,6 +53,14 @@ var routerConfig = ($stateProvider, $urlRouterProvider, $locationProvider) => {
 				}
 			}
 		})
+		.state('root.profile', {
+			url : '/profile',
+			views : {
+				'content@' : {
+					'template' : '<profile></profile>'
+				}
+			}
+		})
 	;
 
 	$urlRouterProvider.otherwise('/login')
