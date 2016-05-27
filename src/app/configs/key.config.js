@@ -29,7 +29,7 @@ const KeyCode = {
     KEY_ENTER : 13,
     KEY_UP    : 38,
     KEY_DOWN  : 40,
-    KEY_DEL   : 8,
+    KEY_DEL   : 8
 };
 
 export default KeyCode;

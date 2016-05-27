@@ -1,10 +1,5 @@
 $black: #313131;
 
-// main
-.main {
-	color: #f00;
-}
-
 // comment
 .comment-up {
 	height: 70vh;
@@ -52,3 +47,17 @@ $black: #313131;
     padding:10px;
     border-top:1px dotted #bbb;
 }
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
