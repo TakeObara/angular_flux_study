@@ -1,16 +1,20 @@
 class LoginCtrl {
 
-	constructor($scope, $state, $log, toastr, LoginConst, LoginAction, LoginStore){
+	constructor($scope, $state, $log, $document, toastr, LoginConst, LoginAction, LoginStore, KeyConst, KeyService) {
 
 		'ngInject';
 
-		this._log         = $log.debug;
 		this._scope       = $scope;
 		this._state       = $state;
+		this._log         = $log.debug;
 		this._toaster     = toastr;
 		this._loginConst  = LoginConst;
 		this._loginAction = LoginAction;
 		this._loginStore  = LoginStore;
+		this._keyConst    = KeyConst;
+		this._keyService  = KeyService;
+
+		$document.on('keydown', this._onKeyUp.bind(this))
 
 		this._registerChangeCallbacks();
 	}
@@ -19,6 +23,15 @@ class LoginCtrl {
 	_registerChangeCallbacks() {
 		this._loginStore.addChangeListener_(this._loginConst.LOGIN_SUCCESS, this.successLogin_.bind(this));
 		this._loginStore.addChangeListener_(this._loginConst.LOGIN_FAILURE, this.failureLogin_.bind(this));
+	}
+
+	_onKeyUp(event) {
+		event.preventDefault();
+		if(this._keyService.isMetaKeyPressed(event) || this._keyService.isCtrlKeyPressed(event)) {
+			if(this._keyService.isParticularKeyPressed(event, this._keyConst.KEY_ENTER)) {
+				this.login_(this._scope.email, this._scope.password);
+			}
+		}
 	}
 
 	// public methods

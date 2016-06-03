@@ -8,7 +8,6 @@ class ChatroomStore extends BaseStore {
 
 		super();
 
-		this._log        = $log.debug;
 		this._const      = ChatroomConst;
 		this._api        = ApiService;
 		this._auth       = AuthService;

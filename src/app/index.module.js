@@ -17,6 +17,7 @@ import Dispatcher from './base/dispatcher';
 import ApiService        from './services/api.service'       ;
 import AuthService       from './services/auth.service'      ;
 import WebStorageService from './services/webstorage.service';
+import KeyService        from './services/key.service'       ;
 
 // actions
 import LoginAction    from './actions/login.action'   ;
@@ -26,7 +27,6 @@ import ArticleAction  from './actions/article.action' ;
 import CommentAction  from './actions/comment.action' ;
 import ChatroomAction from './actions/chatroom.action';
 import ProfileAction  from './actions/profile.action' ;
-
 
 // stores
 import LoginStore    from './stores/login.store'   ;
@@ -52,7 +52,6 @@ import ProfileDirective  from './components/profile/profile.directive'  ;
 angular.module('yoAngular', [
         'ngAnimate',
         'ngCookies',
-        'ngTouch',
         'ngSanitize',
         'ngMessages',
         'ngAria',
@@ -87,6 +86,7 @@ angular.module('yoAngular', [
     .service('ApiService'       , ApiService       )
     .service('AuthService'      , AuthService      )
     .service('WebStorageService', WebStorageService)
+    .service('KeyService'       , KeyService       )
 
     // actions
     .service('LoginAction'   , LoginAction   )
